@@ -133,8 +133,7 @@
   <script src="/_sdk/element_sdk.js" type="text/javascript"></script>
  </head>
  <body class="h-full">
-  <div class="app-root">
-   <!-- ─── HEADER ─── -->
+  <div class="app-root"><!-- ─── HEADER ─── -->
    <div class="header-bg px-5 pt-8 pb-6">
     <div class="flex items-start justify-between mb-3">
      <h1 class="text-3xl font-bold text-white tracking-tight">訓練測驗統計</h1><span id="status-badge" class="mt-2 text-xs font-semibold px-3 py-1.5 rounded-full bg-green-500 text-white">進行中</span>
@@ -165,48 +164,35 @@
     </div>
    </div><!-- ─── 3 STAT CARDS ─── -->
    <div class="px-4 mb-4">
-    <div class="grid grid-cols-3 gap-3">
-     <!-- 應測 --> <button onclick="openCategoryModal('all')" class="stat-card rounded-2xl p-3 text-left hover:shadow-lg transition-shadow cursor-pointer">
-      <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center mb-2">
-       <i data-lucide="users" style="width:16px;height:16px;color:#007AFF;"></i>
+    <div class="grid grid-cols-3 gap-3"><!-- 應測 --> <button onclick="openCategoryModal('all')" class="stat-card rounded-2xl p-3 text-left hover:shadow-lg transition-shadow cursor-pointer">
+      <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center mb-2"><i data-lucide="users" style="width:16px;height:16px;color:#007AFF;"></i>
       </div><p class="text-xs text-gray-400 mb-1">應測</p><p id="s-total" class="text-2xl font-bold text-gray-900">0</p><p class="text-xs text-gray-400 mt-1">員</p>
       <div class="mt-3 space-y-1">
-       <div class="flex justify-between text-xs">
-        <span class="rank-officer px-1.5 py-0.5 rounded-md font-medium">官</span> <span id="s-off" class="font-semibold text-gray-700">0</span>
+       <div class="flex justify-between text-xs"><span class="rank-officer px-1.5 py-0.5 rounded-md font-medium">官</span> <span id="s-off" class="font-semibold text-gray-700">0</span>
        </div>
-       <div class="flex justify-between text-xs">
-        <span class="rank-nco px-1.5 py-0.5 rounded-md font-medium">士</span> <span id="s-nco" class="font-semibold text-gray-700">0</span>
+       <div class="flex justify-between text-xs"><span class="rank-nco px-1.5 py-0.5 rounded-md font-medium">士</span> <span id="s-nco" class="font-semibold text-gray-700">0</span>
        </div>
-       <div class="flex justify-between text-xs">
-        <span class="rank-soldier px-1.5 py-0.5 rounded-md font-medium">兵</span> <span id="s-sol" class="font-semibold text-gray-700">0</span>
+       <div class="flex justify-between text-xs"><span class="rank-soldier px-1.5 py-0.5 rounded-md font-medium">兵</span> <span id="s-sol" class="font-semibold text-gray-700">0</span>
        </div>
       </div></button><!-- 實測 --> <button onclick="openCategoryModal('tested')" class="stat-card rounded-2xl p-3 text-left hover:shadow-lg transition-shadow cursor-pointer">
-      <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mb-2">
-       <i data-lucide="check-circle-2" style="width:16px;height:16px;color:#34C759;"></i>
+      <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mb-2"><i data-lucide="check-circle-2" style="width:16px;height:16px;color:#34C759;"></i>
       </div><p class="text-xs text-gray-400 mb-1">實測</p><p id="s-tested" class="text-2xl font-bold text-green-600">0</p><p class="text-xs text-gray-400 mt-1">員</p>
       <div class="mt-3 space-y-1">
-       <div class="flex justify-between text-xs">
-        <span class="rank-officer px-1.5 py-0.5 rounded-md font-medium">官</span> <span id="s-tested-off" class="font-semibold text-gray-700">0</span>
+       <div class="flex justify-between text-xs"><span class="rank-officer px-1.5 py-0.5 rounded-md font-medium">官</span> <span id="s-tested-off" class="font-semibold text-gray-700">0</span>
        </div>
-       <div class="flex justify-between text-xs">
-        <span class="rank-nco px-1.5 py-0.5 rounded-md font-medium">士</span> <span id="s-tested-nco" class="font-semibold text-gray-700">0</span>
+       <div class="flex justify-between text-xs"><span class="rank-nco px-1.5 py-0.5 rounded-md font-medium">士</span> <span id="s-tested-nco" class="font-semibold text-gray-700">0</span>
        </div>
-       <div class="flex justify-between text-xs">
-        <span class="rank-soldier px-1.5 py-0.5 rounded-md font-medium">兵</span> <span id="s-tested-sol" class="font-semibold text-gray-700">0</span>
+       <div class="flex justify-between text-xs"><span class="rank-soldier px-1.5 py-0.5 rounded-md font-medium">兵</span> <span id="s-tested-sol" class="font-semibold text-gray-700">0</span>
        </div>
       </div></button><!-- 異常 --> <button onclick="openCategoryModal('anomaly')" class="stat-card rounded-2xl p-3 text-left hover:shadow-lg transition-shadow cursor-pointer">
-      <div class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center mb-2">
-       <i data-lucide="alert-circle" style="width:16px;height:16px;color:#FF3B30;"></i>
+      <div class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center mb-2"><i data-lucide="alert-circle" style="width:16px;height:16px;color:#FF3B30;"></i>
       </div><p class="text-xs text-gray-400 mb-1">缺/事故</p><p id="s-anomaly" class="text-2xl font-bold text-red-500">0</p><p class="text-xs text-gray-400 mt-1">員</p>
       <div class="mt-3 space-y-1">
-       <div class="flex justify-between text-xs">
-        <span class="rank-officer px-1.5 py-0.5 rounded-md font-medium">官</span> <span id="s-anom-off" class="font-semibold text-gray-700">0</span>
+       <div class="flex justify-between text-xs"><span class="rank-officer px-1.5 py-0.5 rounded-md font-medium">官</span> <span id="s-anom-off" class="font-semibold text-gray-700">0</span>
        </div>
-       <div class="flex justify-between text-xs">
-        <span class="rank-nco px-1.5 py-0.5 rounded-md font-medium">士</span> <span id="s-anom-nco" class="font-semibold text-gray-700">0</span>
+       <div class="flex justify-between text-xs"><span class="rank-nco px-1.5 py-0.5 rounded-md font-medium">士</span> <span id="s-anom-nco" class="font-semibold text-gray-700">0</span>
        </div>
-       <div class="flex justify-between text-xs">
-        <span class="rank-soldier px-1.5 py-0.5 rounded-md font-medium">兵</span> <span id="s-anom-sol" class="font-semibold text-gray-700">0</span>
+       <div class="flex justify-between text-xs"><span class="rank-soldier px-1.5 py-0.5 rounded-md font-medium">兵</span> <span id="s-anom-sol" class="font-semibold text-gray-700">0</span>
        </div>
       </div></button>
     </div>
@@ -216,13 +202,11 @@
      <h2 class="text-base font-bold text-gray-900">人員名單</h2><button onclick="openAddPerson()" class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center shadow-sm"> <i data-lucide="plus" style="width:16px;height:16px;color:white;"></i> </button>
     </div><!-- Filter -->
     <div class="flex items-center justify-between mb-3">
-     <div class="ios-segmented">
-      <button class="ios-seg-btn active" onclick="setFilter('all', this)">全部</button> <button class="ios-seg-btn" onclick="setFilter('officer', this)">官</button> <button class="ios-seg-btn" onclick="setFilter('nco', this)">士</button> <button class="ios-seg-btn" onclick="setFilter('soldier', this)">兵</button>
+     <div class="ios-segmented"><button class="ios-seg-btn active" onclick="setFilter('all', this)">全部</button> <button class="ios-seg-btn" onclick="setFilter('officer', this)">官</button> <button class="ios-seg-btn" onclick="setFilter('nco', this)">士</button> <button class="ios-seg-btn" onclick="setFilter('soldier', this)">兵</button>
      </div><button onclick="selectAllPersons()" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-blue-100 text-blue-600 hover:bg-blue-200 transition-colors">全選</button>
     </div>
     <div id="person-list" class="space-y-2"></div>
-    <div id="empty-hint" class="hidden text-center py-12 text-gray-400">
-     <i data-lucide="user-plus" style="width:36px;height:36px;margin:0 auto 8px;display:block;opacity:.3;"></i>
+    <div id="empty-hint" class="hidden text-center py-12 text-gray-400"><i data-lucide="user-plus" style="width:36px;height:36px;margin:0 auto 8px;display:block;opacity:.3;"></i>
      <p class="text-sm">尚無人員，點擊右上方 + 新增</p>
     </div>
    </div><!-- ─── CATEGORY MODAL ─── -->
@@ -241,20 +225,15 @@
      <div class="modal-handle"></div>
      <h3 class="text-lg font-bold text-gray-900 mb-4">新增人員</h3>
      <div class="space-y-3">
-      <div>
-       <label class="text-xs font-medium text-gray-500 mb-1 block" for="input-name">姓名</label> <input id="input-name" type="text" placeholder="請輸入姓名" maxlength="10" class="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400">
+      <div><label class="text-xs font-medium text-gray-500 mb-1 block" for="input-name">姓名</label> <input id="input-name" type="text" placeholder="請輸入姓名" maxlength="10" class="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400">
       </div>
-      <div>
-       <label class="text-xs font-medium text-gray-500 mb-1 block">身分類別</label>
-       <div class="ios-segmented">
-        <button class="ios-seg-btn" id="rank-officer-btn" onclick="setRank('officer', this)">官</button> <button class="ios-seg-btn active" id="rank-nco-btn" onclick="setRank('nco', this)">士</button> <button class="ios-seg-btn" id="rank-soldier-btn" onclick="setRank('soldier', this)">兵</button>
+      <div><label class="text-xs font-medium text-gray-500 mb-1 block">身分類別</label>
+       <div class="ios-segmented"><button class="ios-seg-btn" id="rank-officer-btn" onclick="setRank('officer', this)">官</button> <button class="ios-seg-btn active" id="rank-nco-btn" onclick="setRank('nco', this)">士</button> <button class="ios-seg-btn" id="rank-soldier-btn" onclick="setRank('soldier', this)">兵</button>
        </div>
       </div>
-      <div>
-       <label class="text-xs font-medium text-gray-500 mb-1 block" for="input-note">備註（選填）</label> <input id="input-note" type="text" placeholder="職稱、編號…" maxlength="20" class="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400">
+      <div><label class="text-xs font-medium text-gray-500 mb-1 block" for="input-note">備註（選填）</label> <input id="input-note" type="text" placeholder="職稱、編號…" maxlength="20" class="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400">
       </div>
-      <div>
-       <label class="text-xs font-medium text-gray-500 mb-1 block" for="status-note">事由備註（選填）</label> <input id="status-note" type="text" placeholder="請假理由、事故原因…" maxlength="30" class="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400">
+      <div><label class="text-xs font-medium text-gray-500 mb-1 block" for="status-note">事由備註（選填）</label> <input id="status-note" type="text" placeholder="請假理由、事故原因…" maxlength="30" class="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400">
       </div>
      </div><button onclick="addPerson()" class="mt-5 w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-xl text-sm transition-colors"> 新增 </button> <button onclick="closeAddModal()" class="mt-2 w-full text-gray-400 py-2 text-sm">取消</button>
     </div>
@@ -264,11 +243,9 @@
      <div class="modal-handle"></div>
      <div id="status-modal-header" class="mb-4"></div>
      <p class="text-xs font-medium text-gray-400 mb-2 uppercase tracking-wider">設定狀態</p>
-     <div class="grid grid-cols-3 gap-2">
-      <button onclick="setStatus('tested')" class="status-option py-3 rounded-xl text-sm font-semibold status-tested">✓ 已測</button> <button onclick="setStatus('untested')" class="status-option py-3 rounded-xl text-sm font-semibold status-untested">— 未測</button> <button onclick="setStatus('incident')" class="status-option py-3 rounded-xl text-sm font-semibold status-incident">⚠ 事故</button> <button onclick="setStatus('leave')" class="status-option py-3 rounded-xl text-sm font-semibold status-leave">✈ 請假</button> <button onclick="setStatus('duty')" class="status-option py-3 rounded-xl text-sm font-semibold status-duty">⚙ 公差</button> <button onclick="setStatus('sick')" class="status-option py-3 rounded-xl text-sm font-semibold status-sick">＋ 傷病</button>
+     <div class="grid grid-cols-3 gap-2"><button onclick="setStatus('tested')" class="status-option py-3 rounded-xl text-sm font-semibold status-tested">✓ 已測</button> <button onclick="setStatus('untested')" class="status-option py-3 rounded-xl text-sm font-semibold status-untested">— 未測</button> <button onclick="setStatus('incident')" class="status-option py-3 rounded-xl text-sm font-semibold status-incident">⚠ 事故</button> <button onclick="setStatus('leave')" class="status-option py-3 rounded-xl text-sm font-semibold status-leave">✈ 請假</button> <button onclick="setStatus('duty')" class="status-option py-3 rounded-xl text-sm font-semibold status-duty">⚙ 公差</button> <button onclick="setStatus('sick')" class="status-option py-3 rounded-xl text-sm font-semibold status-sick">＋ 傷病</button>
      </div>
-     <div class="flex gap-2 mt-4">
-      <button onclick="bulkSelectedIds ? confirmBulkStatus() : confirmStatus()" class="flex-1 bg-blue-500 text-white font-semibold py-3 rounded-xl text-sm">確認</button> <button id="delete-btn" onclick="deletePerson()" class="px-4 py-3 rounded-xl text-sm text-red-500 border border-red-200">刪除</button> <button onclick="closeStatusModal()" class="flex-1 bg-gray-100 text-gray-600 font-semibold py-3 rounded-xl text-sm">取消</button>
+     <div class="flex gap-2 mt-4"><button onclick="bulkSelectedIds ? confirmBulkStatus() : confirmStatus()" class="flex-1 bg-blue-500 text-white font-semibold py-3 rounded-xl text-sm">確認</button> <button id="delete-btn" onclick="deletePerson()" class="px-4 py-3 rounded-xl text-sm text-red-500 border border-red-200">刪除</button> <button onclick="closeStatusModal()" class="flex-1 bg-gray-100 text-gray-600 font-semibold py-3 rounded-xl text-sm">取消</button>
      </div>
     </div>
    </div>
@@ -281,28 +258,36 @@ function saveToLocalStorage() {
     persons,
     nextId,
     config: {
-      exam_item: window.elementSdk?.config?.exam_item || defaultConfig.exam_item,
-      officer_in_charge: window.elementSdk?.config?.officer_in_charge || defaultConfig.officer_in_charge,
-      coordinator: window.elementSdk?.config?.coordinator || defaultConfig.coordinator,
-      batch_number: window.elementSdk?.config?.batch_number || defaultConfig.batch_number,
+      exam_item: defaultConfig.exam_item,
+      officer_in_charge: defaultConfig.officer_in_charge,
+      coordinator: defaultConfig.coordinator,
+      batch_number: defaultConfig.batch_number,
     }
   };
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+  } catch (e) {
+    console.error('Failed to save to localStorage:', e);
+  }
 }
 
 function loadFromLocalStorage() {
-  const saved = localStorage.getItem(STORAGE_KEY);
-  if (saved) {
-    try {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
       const data = JSON.parse(saved);
-      persons = data.persons || persons;
-      nextId = data.nextId || 107;
+      if (data.persons && Array.isArray(data.persons)) {
+        persons = data.persons;
+      }
+      if (data.nextId) {
+        nextId = data.nextId;
+      }
       if (data.config) {
         Object.assign(defaultConfig, data.config);
       }
-    } catch (e) {
-      console.error('Failed to load from localStorage:', e);
     }
+  } catch (e) {
+    console.error('Failed to load from localStorage:', e);
   }
 }
 
@@ -766,5 +751,5 @@ loadFromLocalStorage();
 render();
 </script>
   </div>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ddc4207c47ca9b5',t:'MTc3Mzc1MzIzOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ddc6551649f841e',t:'MTc3Mzc1NDY4My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
